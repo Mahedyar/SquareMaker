@@ -36,14 +36,15 @@ const finalResult = (n) => {
 
 
 
-
-
-
-
-
-
-
-
+const stringReverse = (string) => {
+    if (typeof string !== string){
+        return -1
+    }
+    if (string.length-1 === 0){
+        return string[0]
+    }
+   return  string[string.length-1] + stringReverse(string.substring(0,string.length-1))
+}
 
 
 
@@ -80,6 +81,35 @@ const arraySubstract = (arr1 , arr2) => {
 }
 
 ////// fifth Exercise
+
+const offset = (arr , index , offset) => {
+    if (arr.length===0 ||index > arr.length-1 || index+offset < 0 ){
+        return -1
+    }
+    selectedNum = arr.splice(index , 1 )
+    newArr = arr.splice(index+offset , 0 , selectedNum[0])
+    return arr
+
+}
+
+//// Sixth exercise
+
+const duplicateOmmitter = (string) => {
+    if (typeof string !== string) {
+        return -1
+    }
+  let newString = ""
+    for (let i =0 ; i < string.length ; i++){
+        if (string[i] !== string[i+1]){
+            newString += string[i]
+        }
+    }
+    return newString
+}
+
+
+
+
 
 
 
